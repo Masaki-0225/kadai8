@@ -1,6 +1,7 @@
 package com.work.kadai8;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -14,8 +15,9 @@ public class MemberController {
         this.memberMapper = memberMapper;
     }
 
+
     @GetMapping("/member")
-    public List<Member> findAll() {
-        return memberMapper.getAll();
+    public List<Member> findByNames(@RequestParam int id) {
+        return memberMapper.findByMemberId(id);
     }
 }

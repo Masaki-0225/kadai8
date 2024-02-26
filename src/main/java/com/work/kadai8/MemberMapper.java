@@ -12,4 +12,7 @@ public interface MemberMapper {
     @Select("SELECT * FROM members")
     List<Member> getAll();
 
+    @Select("SELECT * FROM members WHERE id = #{a}")
+    List<Member> findByMemberId(int a);
+
 }
