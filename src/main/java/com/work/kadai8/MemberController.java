@@ -17,7 +17,7 @@ public class MemberController {
 
 
     @GetMapping("/member")
-    public List<Member> findByNames(@RequestParam int id) {
+    public List<Member> findById(@RequestParam int id) {
         return memberMapper.findByMemberId(id);
     }
 }
