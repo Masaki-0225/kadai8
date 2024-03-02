@@ -7,7 +7,7 @@ import java.util.Optional;
 
 @Service
 public class MemberService {
-    private MemberMapper memberMapper;
+    private final MemberMapper memberMapper;
 
     public MemberService(MemberMapper memberMapper) {
         this.memberMapper = memberMapper;
