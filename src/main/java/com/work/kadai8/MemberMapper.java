@@ -4,6 +4,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Mapper
@@ -13,6 +14,6 @@ public interface MemberMapper {
     List<Member> getAll();
 
     @Select("SELECT * FROM members WHERE id = #{id}")
-    List<Member> findByMemberId(int id);
+    Optional<Member> findByMemberId(int id);
 
 }

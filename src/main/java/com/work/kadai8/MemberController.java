@@ -9,19 +9,19 @@ import java.util.List;
 @RestController
 public class MemberController {
 
-    private final MemberMapper memberMapper;
+    private final MemberService memberService;
 
-    public MemberController(MemberMapper memberMapper) {
-        this.memberMapper = memberMapper;
+    public MemberController(MemberService memberService) {
+        this.memberService = memberService;
     }
 
     @GetMapping("/member")
     public List<Member> getAll() {
-        return memberMapper.getAll();
+        return memberService.findAll();
     }
 
     @GetMapping("/member/{id}")
-    public List<Member> findById(@PathVariable("id") int id) {
-        return memberMapper.findByMemberId(id);
+    public Member getMember(@PathVariable("id") int id) {
+        return memberService.findById(id);
     }
 }
